@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+/* colors and images */
+:root {
+  --nav-links-color: #fff;
+  --button-hover-color: #878584;
+  --backoffice-menu-bg: #343a40;
+  --nav-link-hover-color: #f79800;
+  --price-color: #198a28;
+  --footer-color: #e3e3e3;
+  --dark-layer: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6));
+  --header-bg-image: url(img_bg_backoffice_usuario.jpg);
+  --edit-button-color: #ffa207;
+  --delete-button-color: #dc3545;
+  --create-button-color: #198a28; 
+  --pagination-active-bg: #007bff;
+}
+
+/* cleans some styles */
+* {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  transition-duration: 0.2s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header styles */
+header {
+  background-image: var(--dark-layer), var(--header-bg-image);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 45vh;
+  padding: 2% 5%;
+  color: var(--nav-links-color);
+}
+
+header :is(a:hover,a.active) {
+  color: var(--nav-link-hover-color);
+}
+
+.site_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site_menu > nav, .backoffice_menu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.backoffice_menu {
+  background-color: var(--backoffice-menu-bg);
+  color: var(--nav-links-color);
+  font-size: 0.7rem;
+  padding: 1rem 5%;
+}
+
+/* main styles */
+main {
+  min-height: 40vh;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.meal_card {
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  max-width: 15rem;
+  min-height: 18rem;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.meal_image {
+  position: relative;
+  height: 10rem;
+}
+
+.meal_image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.meal_name, .meal_is_not_available {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: white;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.meal_name {
+  width: 100%;
+  padding:0.7rem;
+}
+
+.meal_is_not_available {
+  text-align: center;
+  padding: 25%;
+  width: 100%;
+  height: 100%;
+}
+
+.meal_card_content, .meal_card_actions {
+  padding: 0.7rem;
+}
+
+.meal_description {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  height: 2.5rem;
+}
+
+.meal_price {
+  color: var(--price-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.edit, .delete, .create_meal {
+  border: none;
+  background-color: gray;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit {
+  background-color: var(--edit-button-color);
+}
+
+.delete {
+  background-color: var(--delete-button-color);
+}
+
+.create_meal {
+  background-color: var(--create-button-color);
+}
+
+.edit:hover, .delete:hover, .create_meal:hover {
+  background-color: gray;
+}
+
+.meal_card_actions {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.meals {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.meals_page_actions {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+}
+
+.pagination button {
+  color: black;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination button.active {
+  background-color: var(--pagination-active-bg);
+  color: white;
+  border: 1px solid var(--pagination-active-bg);
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.pagination button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* footer styles */
+footer {
+  background-color: var(--footer-color);
+  min-height: 2rem;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  margin-top: 3rem;
+}

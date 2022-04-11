@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dinnerdash | Backoffice </title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+  <header>
+    <div class="site_menu">
+      <h3>dinnerdash</h3>
+      <nav>
+        <a href="#" class="active">backoffice</a>
+        <a href="#">perfil</a>
+        <a href="#">sair</a>
+      </nav>
+    </div>
+    <div>
+      <h1>Backoffice</h1>
+      <p>Gerencie pedidos, refeições e mais.</p>
+    </div>
+  </header>
+  <nav class="backoffice_menu">
+    <a href="#">Pedidos</a>
+    <a href="#">Usuários</a>
+    <a href="#">Refeições</a>
+    <a href="#">Categorias de Refeição</a>
+  </nav>
+  <main>
+  </main>
+  <body>
+
+<style>
+  table {
+    font-family: 'Montserrat', sans-serif;;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #cccccc;
+    padding: 8px;
+  }
+
+  th {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  tr:hover {
+    color:  white;
+  }
+
+</style>
+
+<script>
+  let sortDirection = false;
+  let personData = [
+    {id:1,name:"Lauren Shaxby",email:"lshaxby0@php.net",created_at:"16/10/2021"},
+
+    {id:2,name:"Ardenia Paddingdon",email:"apaddingdon1@nsw.gov.au",created_at:"27/07/2021"},
+
+    {id:3,name:"Renaldo Alenichev",email:"ralenichev2@ftc.gov",created_at:"10/06/2021"},
+
+    {id:4,name:"Nichole OHeneghan",email:"noheneghan3@flavors.me",created_at:"28/06/2021"},
+
+    {id:5,name:"Haywood Daintry",email:"hdaintry4@nhs.uk",created_at:"18/03/2021"},
+
+    {id:6,name:"Leslie Daile",email:"ldaile5@vimeo.com",created_at:"23/05/2021"},
+
+    {id:7,name:"Byrann Slorance",email:"bslorance6@kickstarter.com",created_at:"15/05/2021"},
+
+    {id:8,name:"My Swendell",email:"mswendell7@moonfruit.com",created_at:"15/12/2021"},
+
+    {id:9,name:"Brier Esson",email:"besson8@usa.gov",created_at:"14/03/2021"},
+
+    {id:10,name:"Seth Piddle",email:"spiddle9@nationalgeographic.com",created_at:"20/10/2021"},
+
+    {id:11,name:"Fer Piddle",email:"ferspiddle9@nationalgeographic.com",created_at:"20/10/2022"}
+  ];
+
+  window.onload = () => {
+    loadTableData(personData);
+  }
+
+  loadTableData(personData);
+
+  function loadTableData(personData) {
+    const tableBody = document.getElementById('tableData');
+    let dataHtml = ''
+
+    for(let person of personData) {
+        dataHtml += `<tr><td>${person.name}</td><td>${person.email}</td><td>${person.created_at}</td></tr>`;
+    }
+
+    console.log(dataHtml)
+
+    tableBody.innerHTML = dataHtml;
+  }
+  
+</script>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Cadastrado em</th>
+      </tr>
+    </thead>
+
+    <tbody id="tableData"></tbody>
+
+  </table>
+
+</body>
+  <footer>
+    <span>dinnerdash | todos os direitos reservados</span>
+    <span>desenvolvido por Trainee Legal</span>
+  </footer>
+  <script src="mockdata.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
